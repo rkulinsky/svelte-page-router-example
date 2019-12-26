@@ -1,6 +1,8 @@
 import Router from 'svelte-page-router';
  
 import App from './App.svelte';
+import Page1 from './pages/Page1.svelte';
+import Page2 from './pages/Page2.svelte';
  
 const options = {
     click: true,
@@ -12,10 +14,10 @@ const options = {
 const router = new Router({
     routes: [{
         path: '/',
-        component: import('./pages/Page1.svelte')
+        component: Page1
     },{
         path: '/page2',
-        component: import('./pages/Page2.svelte')
+        component: Page2
     }],
     ...options
 });
