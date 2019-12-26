@@ -1,10 +1,32 @@
 <script>
-	export let name;
+    import Loading from './Loading.svelte';
+
+    export let component = null,
+        pathname = '',
+        path = '',
+        hash = '',
+        params = {},
+        query = {},
+        state = {};
+
+    export let name;
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+    <h1>{name}</h1>
+
+    <a href="/">Page 1</a>
+    <a href="/page2">Page 2</a>
+
+    <svelte:component 
+        this={component || Loading} 
+        {...state} 
+        {pathname} 
+        {path} 
+        {hash} 
+        {params} 
+        {query}
+    />
 </main>
 
 <style>
@@ -18,8 +40,8 @@
 	h1 {
 		color: #ff3e00;
 		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
+		font-size: 1em;
+		font-weight: 600;
 	}
 
 	@media (min-width: 640px) {
