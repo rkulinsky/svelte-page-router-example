@@ -1,5 +1,7 @@
+import { tick } from 'svelte';
+
 import Router from 'svelte-page-router';
- 
+
 import App from './App.svelte';
 import Page1 from './pages/Page1.svelte';
 import Page2 from './pages/Page2.svelte';
